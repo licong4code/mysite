@@ -1,0 +1,21 @@
+{% extends 'game/base.html' %}
+{% load staticfiles %}
+{% if title %}
+    {% block title %}{{ title }}{% endblock %}
+{% endif %}
+{% block content %}
+<div style="padding-left:160px;">
+<button type="button" class="btn btn-primary" >新增渠道</button>
+</div>
+<br/>
+<br/>
+<br/>
+<div style="padding-left:160px;">
+<a href="1"><h3>android_huayu</h3></a>
+<a href="2"><h3>android_huayu_test </h3></a>
+<a href="2"><h3>ios_hapu </h3></a>
+<a href="2"><h3>huayugame</h3></a>
+<a href="2"><h3>huayugame_test </h3></a>
+
+</div>
+{% endblock %}

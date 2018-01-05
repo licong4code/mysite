@@ -22,10 +22,13 @@ from login import views
 urlpatterns = [
     #url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
-
     url(r'^index/', views.index),
     url(r'^login/', views.login),
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
+    url(r'^game/', views.game),
+    url(r'^game/(?P<game_id>\d*)/(?P<channel>\S*)', views.game),
+    url(r'^white/',views.whiteList),
+    url(r'^version/',views.versionCtrl),
     url(r'^captcha', include('captcha.urls'))
 ]
