@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^game/(?P<game_id>\d*)/(?P<channel>\S*)', views.game),
     url(r'^white/',views.whiteList),
     url(r'^version/',views.versionCtrl),
+    url(r'^share/',views.share),
     url(r'^captcha', include('captcha.urls'))
 ]
