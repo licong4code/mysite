@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf.urls import include, url
 
 from login import views
-
+from game.views import share
 urlpatterns = [
     #url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
@@ -30,6 +30,6 @@ urlpatterns = [
     url(r'^game/(?P<game_id>\d*)/(?P<channel>\S*)', views.game),
     url(r'^white/',views.whiteList),
     url(r'^version/',views.versionCtrl),
-    url(r'^share/',views.share),
+    url(r'^share/', share),
     url(r'^captcha', include('captcha.urls'))
 ]

@@ -126,8 +126,3 @@ def whiteList(request):
 # 添加模块
 def versionCtrl(request):
     return render(request,"game/version.html")
-
-
-#
-def share(request):
-    return JsonResponse({})
