@@ -1,5 +1,5 @@
 .idea
 settings.py
 db.sqlite3
-.ttf
+*.ttf
 mysite/__pycache__/
