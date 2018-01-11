@@ -3,7 +3,7 @@ from PIL import Image,ImageDraw,ImageFont
 import time,os
 import datetime
 
-base_root = os.path.join(os.path.split(__file__)[0],"../../download/")
+base_root = os.path.realpath(os.path.join(os.path.split(__file__)[0],"../../download/"))
 
 class Creator(object):
     def __init__(self,bgpath,fontpath,fontsize):
@@ -20,7 +20,7 @@ class Creator(object):
 def run(data):
     root = os.path.join(base_root,"share")
     now = datetime.datetime.now()
-    foleder = os.path.join(base_root, now.strftime('%Y-%m-%d'))
+    foleder = os.path.realpath(os.path.join(base_root, now.strftime('%Y-%m-%d')))
     if os.path.exists(foleder) == False:
         os.mkdir(foleder)
     filename = "{0}/{1}.jpg".format(foleder, int(time.time()))
@@ -31,7 +31,7 @@ def run(data):
         ctor.addText(value["text"],value["color"],(x,y))
         x = x + ctor.ttffont.getsize(value["text"])[0]
     ctor.save(os.path.join(root, filename))
-    return filename.replace(base_root,"")
+    return filename.replace(base_root,"").replace("\\","/")
 
 if __name__ == "__main__":
 	# run([{"text":u"累计淘汰 1 名 获得 ","color":(18,10,10)},{"text":u"1.88","color":(255,0,0)},{"text":u' 微信红包',"color":(18,10,10)}])
