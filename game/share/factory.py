@@ -75,7 +75,7 @@ class Creator(object):
        	filename = "{0}/{1}.jpg".format(foleder, filename).replace("\\","/")
        	if os.path.exists(filename) == False:
 	        bg = self.getBg(data["type"])
-	        if data.has_key("icon"):
+	        if data.has_key("icon") and len(data['icon']) > 0:
 	        	icon = self.downloadIcon(data['icon'])
 	        else:
 	        	icon = self.getIcon(data["app_id"])
